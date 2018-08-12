@@ -10,7 +10,7 @@ provider "aws" {
 }
 
 module "lambda" {
-  source               = "github.com/dsiguero/tf-module-lambda"
+  source               = "github.com/dsiguero/tf-module-lambda?ref=v0.0.1"
   function_environment = "develop"
   function_description = "This is just a description"
   function_handler     = "function.handler"
@@ -26,6 +26,9 @@ module "lambda" {
   }
 }
 ```
+
+## Versioning
+You can use refs to specify a specific branch, commit, or tag as shown in the example.
 
 ## Variables
 
