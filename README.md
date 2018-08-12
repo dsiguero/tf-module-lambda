@@ -11,6 +11,7 @@ provider "aws" {
 
 module "lambda" {
   source               = "github.com/dsiguero/tf-module-lambda"
+  function_environment = "develop"
   function_description = "This is just a description"
   function_handler     = "function.handler"
   function_iam_role    = "${aws_iam_role.lambda_role.arn}"
@@ -26,13 +27,13 @@ module "lambda" {
 }
 ```
 
-
 ## Variables
 
 | Name                  | Default | Description                                                                            | Type   |
 |-----------------------|---------|----------------------------------------------------------------------------------------|--------|
 |function_description   |         | What this Lambda function does.                                                        | string |
 |function_env_variables |         | Environment variables this function requires.                                          | map    |
+|function_environment   |         | Environment Name of the environment where this Lambda belongs: develop, production...  | string |
 |function_handler       |         | The handler function this Lambda will run when invoked.                                | string |
 |function_iam_role      |         | IAM Role to be used by this Lambda function.                                           | string |
 |function_max_memory    |         | Maximum amount of memory to execute this function.                                     | number |

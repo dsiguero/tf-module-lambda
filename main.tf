@@ -9,7 +9,11 @@ resource "aws_lambda_function" "lambda_function" {
   runtime          = "${var.function_runtime}"
   source_code_hash = "${base64sha256(file(var.function_package))}"
   timeout          = "${var.function_timeout}"
-  tags             = "${var.function_tags}"
+
+  tags = "${merge(
+    var.function_tags,
+    map("Environment", "${var.function_environment}")
+  )}"
 
   environment {
     variables = "${var.function_env_variables}"
