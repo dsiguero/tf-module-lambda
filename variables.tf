@@ -3,6 +3,11 @@ variable "function_description" {
   description = "What this Lambda function does."
 }
 
+variable "function_environment" {
+  type        = "string"
+  description = "Name of the environment where this Lambda belongs: develop, testing, production..."
+}
+
 variable "function_env_variables" {
   default     = {}
   description = "Environment variables this function requires."
@@ -11,7 +16,7 @@ variable "function_env_variables" {
 
 variable "function_handler" {
   description = "The handler function this Lambda will run when invoked."
-  type = "string"
+  type        = "string"
 }
 
 variable "function_iam_role" {
