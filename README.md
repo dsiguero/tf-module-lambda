@@ -10,7 +10,7 @@ provider "aws" {
 }
 
 module "lambda" {
-  source               = "../../lambda"
+  source               = "github.com/dsiguero/tf-module-lambda"
   function_description = "This is just a description"
   function_handler     = "function.handler"
   function_iam_role    = "${aws_iam_role.lambda_role.arn}"
@@ -49,9 +49,9 @@ module "lambda" {
 
 | Name                | Description                                               |
 |---------------------|-----------------------------------------------------------|
-|function_arn         | Lambda ARN/                                               |
+|function_arn         | Lambda ARN.                                               |
 |function_version_arn | Lambda ARN. Includes version if `publish` was set to true.|
 |function_api_gw_arn  | Lambda ARN to use with API Gateway.                       |
 |function_version     | Version of the deployed Lambda function.                  |
-|last_modified        | Last modified                                             |
+|last_modified        | Last modified.                                            |
 
