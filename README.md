@@ -45,8 +45,6 @@ You can use refs to specify a specific branch, commit, or tag as shown in the ex
 |function_runtime       |         | Runtime to be used for Lambda execution.                                               | string |
 |function_tags          |         | Tags for this Lambda function.                                                         | map    |
 |function_timeout       |         | Maximum amount of seconds for this function to run.                                    | number |
-|function_vpc_sg        |         | Security groups for this function, when running within an AWS VPC.                     | list   |
-|function_vpc_subnets   |         | VPC Subnets for this function, when running within an AWS VPC.                         | list   |
 |publish                |         | When set to true will publish changes as a new lambda version.                         | bool   |
 
 ## Outputs

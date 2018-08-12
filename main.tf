@@ -19,8 +19,10 @@ resource "aws_lambda_function" "lambda_function" {
     variables = "${var.function_env_variables}"
   }
 
-  vpc_config {
-    security_group_ids = ["${var.function_vpc_sg}"]
-    subnet_ids         = ["${var.function_vpc_subnets}"]
-  }
+  # Temporarily disabling vpc config for the lambdas as TF always thinks there is a change when the
+  # values are empty. https://github.com/hashicorp/terraform/issues/10900
+  #  vpc_config {
+  #    security_group_ids = ["${var.function_vpc_sg}"]
+  #    subnet_ids         = ["${var.function_vpc_subnets}"]
+  #  }
 }
