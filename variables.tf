@@ -67,3 +67,7 @@ variable "publish" {
   default     = true
   description = "When set to true will publish changes as a new lambda version."
 }
+
+variable "function_semver_version" {
+  description = "Version for the deployed lambda."
+}
