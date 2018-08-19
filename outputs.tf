@@ -18,6 +18,10 @@ output "function_semver_version" {
   value = "${var.function_semver_version}"
 }
 
+output "function_name" {
+  value = "${aws_lambda_function.lambda_function.function_name}"
+}
+
 output "last_modified" {
   value = "${aws_lambda_function.lambda_function.last_modified}"
 }
